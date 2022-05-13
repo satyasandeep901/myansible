@@ -1,11 +1,18 @@
 ---
-- hosts: myhosts
+- hosts: all
   become: yes
   tasks:
   - name: i want to install apache2
     apt:
       name: apache2
       state: present
+    when: ansible_os_family=="debian"
+
+  - name: i want to start apache2
+    service:
+      name: apache2
+      state:  restarted
+    when: ansible_os_family=="debian"
 
   - name: i want to install httpd
     yum:
