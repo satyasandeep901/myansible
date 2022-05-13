@@ -6,22 +6,21 @@
     apt:
       name: apache2
       state: present
-    when: ansible_os_family=="debian"
+    when: ansible_os_family=="Debian"
 
   - name: i want to start apache2
     service:
       name: apache2
-      state:  restarted
-    when: ansible_os_family=="debian"
+      state: restarted
+    when: ansible_os_family=="Debian"
 
-  - name: i want to install httpd
+  - name: i want to install webserver on Radhat nodes
     yum:
       name: httpd
       state: present
-    when: ansible_os_family=="redhat"
+    when: ansible_os_family=="Redhat"
 
-  - name: i want to start httpd
+  - name: i want to start webserver
     service:
       name: httpd
-      state: restarted
-    when: ansible_os_family=="redhat"
+      state: started
