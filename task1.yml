@@ -1,11 +1,13 @@
+#task-1(To Install apache on ubuntu nodes)
 ---
 - hosts: all
-  becom: yes
+  become: yes
   tasks:
   - name: i want to install apache2
     apt:
       name: apache2
       state: present
+
   - name: i want to start apache2
     service:
       name: apache2
