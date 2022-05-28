@@ -1,0 +1,28 @@
+---
+- hosts: all
+  become: yes
+  gather_facts: yes
+  tasks:
+  - name: i want to install apache2
+    apt:
+     name: apache2
+     state: present
+    when: ansible_os_family == "Debian"
+     
+  - name: i want to start apache2, if not started
+    ansible.builtin.service:
+      name: apache2
+      state: restarted
+    when: ansible_os_family == "Debian"
+
+  - name: i want to install httpd on redhat
+    yum:
+      name: httpd
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: i want to start httpd, if not started
+    ansible.builtin.service:
+      name: httpd
+      state: restarted
+    when: ansible_os_family == "RedHat"

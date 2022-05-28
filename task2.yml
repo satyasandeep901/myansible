@@ -1,4 +1,3 @@
-##task-2(To Install apache on ubuntu and httpd webserver on RedHat nodes)
 ---
 - hosts: all
   become: yes
@@ -7,22 +6,18 @@
     apt:
       name: apache2
       state: present
-    when: ansible_os_family =="Debian"
 
   - name: i want to start apache2
     service:
       name: apache2
       state: restarted
-    when: ansible_os_family =="Debian"
 
   - name: i want to install webserver on RadHat nodes
     yum:
       name: httpd
       state: present
-    when: ansible_os_family =="RedHat"
 
   - name: i want to start webserver
     service:
       name: httpd
       state: started
-    when: ansible_os_family =="RedHat"
