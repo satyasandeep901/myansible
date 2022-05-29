@@ -5,14 +5,14 @@
   tasks:
   - name: i want to install apache2
     apt:
-     name: "{{mywebpackonubuntu}}"
-     state: present
+      name: "{{mywebpackonubuntu}}"
+      state: present
     when: ansible_os_family =="Debian"
      
-  - name: i want to start apache2, if not started
+  - name: i want to start apache2
     service:
-      name: "{{mywebpackonubuntu}}"
-      state: restarted
+        name: "{{mywebpackonubuntu}}"
+        state: restarted
     when: ansible_os_family =="Debian"
 
   - name: i want to install httpd on redhat
@@ -23,6 +23,6 @@
 
   - name: i want to start httpd, if not started
     service:
-      name: "{{mywebpackonredhat}}"
-      state: restarted
+        name: "{{mywebpackonredhat}}"
+        state: started
     when: ansible_os_family =="RedHat"
