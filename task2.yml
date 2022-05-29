@@ -3,20 +3,26 @@
   become: yes
   gather_facts: yes
   tasks:
-  - name: i want to uninstall apache2
+  - name: i want to install apache2
     apt:
-      name: apache2
-      state: absent
+     name: apache2
+     state: present
     when: ansible_os_family =="Debian"
-
-  - name: i want to remove apache2
+     
+  - name: i want to start apache2, if not started
     service:
       name: apache2
-      state: stopped
+      state: restarted
     when: ansible_os_family =="Debian"
 
-  - name: i want to uninstall webserver on RadHat nodes
+  - name: i want to install httpd on redhat
     yum:
       name: httpd
-      state: absent
+      state: present
+    when: ansible_os_family =="RedHat"
+
+  - name: i want to start httpd, if not started
+    service:
+      name: httpd
+      state: restarted
     when: ansible_os_family =="RedHat"
