@@ -23,6 +23,5 @@
 
   - name: i want to remove webserver
     service:
-      name: httpd
-      state: stopped
+      state: reload
     when: ansible_os_family =="RedHat"
