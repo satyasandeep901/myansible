@@ -1,1 +1,11 @@
-this is task 5
+---
+- hosts: 172.31.5.68
+  become: yes
+  vars:
+    myvar01: git
+    myvar02: tree
+    myvar03: wget
+  tasks:
+  - name: i want to display myvar02
+    debug:
+      msg: "{{myvar02}}"
