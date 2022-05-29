@@ -1,5 +1,5 @@
 ---
-- hosts:
+- hosts: 172.31.5.68
   become: yes
   tasks:
   - name: i want to install apache2
@@ -11,7 +11,7 @@
     service:
       name: apache2
       state: restarted
-      
+
   - name: i want to copy dynamic file into ansible node servers
     template:
       src: myindex.j2
