@@ -12,6 +12,7 @@
       nme: tree
       state: present
     tags: mytree
+    ignore_errors: yes
   - name: mywget
     apt:
       name: wget
