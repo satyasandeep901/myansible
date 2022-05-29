@@ -10,7 +10,7 @@
     when: ansible_os_family =="Debian"
      
   - name: i want to start apache2, if not started
-    ansible.builtin.service:
+    service:
       name: "{{mywebpackonubuntu}}"
       state: restarted
     when: ansible_os_family =="Debian"
@@ -22,7 +22,7 @@
     when: ansible_os_family =="RedHat"
 
   - name: i want to start httpd, if not started
-    ansible.builtin.service:
+    service:
       name: "{{mywebpackonredhat}}"
       state: restarted
     when: ansible_os_family =="RedHat"
