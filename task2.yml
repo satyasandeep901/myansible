@@ -12,7 +12,7 @@
   - name: i want to remove apache2
     service:
       name: apache2
-      state: absent
+      state: stopped
     when: ansible_os_family =="Debian"
 
   - name: i want to uninstall webserver on RadHat nodes
@@ -24,5 +24,5 @@
   - name: i want to remove webserver
     service:
       name: httpd
-      state: absent
+      state: stopped
     when: ansible_os_family =="RedHat"
