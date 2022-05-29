@@ -2,7 +2,7 @@
 - hosts: 172.31.5.68
   become: yes
   tasks:
-- name: i want to create a file
-  file:
-    path: /home/ubuntu/mytestfile
-    state: touch
+  - name: i want to create a file
+    file:
+      path: /home/ubuntu/mytestfile
+      state: touch
