@@ -21,7 +21,7 @@
       state: present
     when: ansible_os_family =="RedHat"
 
-  - name: i want to start httpd, if not started
+  - name: i want to start httpd
     service:
         name: "{{mywebpackonredhat}}"
         state: started
