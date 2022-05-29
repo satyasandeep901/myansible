@@ -1,0 +1,9 @@
+---
+- hosts: 172.31.5.68
+  become: yes
+  tasks:
+  - name: install java on ubuntu
+    apt:
+      name: "{{myjavapackonubuntu}}"
+      state: present
+    when: ansible_os_family =="Debian"
