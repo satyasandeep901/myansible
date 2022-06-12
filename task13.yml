@@ -6,7 +6,7 @@
     apt:
       name: apache2
       state: present
-  handler:
+    handler:
   - name: restartwebserver
     service:
       name: apache2
