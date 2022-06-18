@@ -1,18 +1,18 @@
 ---
-- hosts:
+- hosts: 172.31.5.68
   become: yes
   tasks:
   - name: i want to install apache2
     apt:
       name: apache2
       state: present
-    handler:
+  handlers:    
   - name: restartwebserver
     service:
       name: apache2
       state: restarted
   - name: i want to copy static file into ansible node
     template:
-        src: myfile.html
-        dest: /var/www/html/index.html
+      src: myfile.html
+      dest: /var/www/html/index.html
     notify: restartwebserver
