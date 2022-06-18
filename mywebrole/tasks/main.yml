@@ -1,6 +1,0 @@
----
-- name: install webserver on nodes
-  apt:
-    name: apache2
-    state: present
-  notify: restartwebserver
