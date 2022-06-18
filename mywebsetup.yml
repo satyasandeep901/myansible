@@ -1,4 +1,4 @@
 ---
 - hosts: 172.31.5.68
-  becom: yes
+  become: yes
   role: mywebrole
