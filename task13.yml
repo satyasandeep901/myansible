@@ -6,7 +6,11 @@
     apt:
       name: apache2
       state: present
+<<<<<<< HEAD
   handlers:    
+=======
+  handlers:
+>>>>>>> 5de5aa3577929a42c4a31ea9566ee2e09b2879a1
   - name: restartwebserver
     service:
       name: apache2
@@ -15,4 +19,8 @@
     template:
       src: myfile.html
       dest: /var/www/html/index.html
+<<<<<<< HEAD
     notify: restartwebserver
+=======
+    notify: restartwebserver
+>>>>>>> 5de5aa3577929a42c4a31ea9566ee2e09b2879a1
