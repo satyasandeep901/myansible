@@ -12,7 +12,6 @@
       count: 1
       vpc_subnet_id: subnet-0af6be4196ce40e42
       assign_public_ip: yes
-      region: ap-south-1a
+      region: ap-south-1
       instance_tags:
           Name: myansiblenode
-          
