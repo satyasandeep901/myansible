@@ -8,7 +8,7 @@
       instance_type: t2.micro
       image: ami-0569650c674be8fe0
       wait: yes
-      group: sg-0c9781ef512ade525
+      group: ubuntu SG
       count: 1
       vpc_subnet_id: subnet-0af6be4196ce40e42
       assign_public_ip: yes
