@@ -4,7 +4,7 @@
   tasks:
   - name: launch Ec2 instance
     ec2:
-      key_name: key-0e896dff8cee71ce5
+      key_name: my_ubantu_KEY_PAIR
       instance_type: t2.micro
       image: ami-0569650c674be8fe0
       wait: yes
