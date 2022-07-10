@@ -3,7 +3,7 @@
   become: yes
   tasks:
   - name: launch Ec2 instance
-     ec2:
+    ec2:
       key_name: key-0e896dff8cee71ce5
       instance_type: t2.micro
       image_id: ami-0569650c674be8fe0
