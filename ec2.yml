@@ -3,15 +3,15 @@
   become: yes
   tasks:
   - name: launch Ec2 instance
-  - ec2:
-     key_name: key-0e896dff8cee71ce5
-     instance_type: t2.micro
-     image_id: ami-0569650c674be8fe0
-     wait: yes
-     group_id: sg-0c9781ef512ade525
-     count: 2
-     vpc_subnet_id: subnet-0af6be4196ce40e42
-     assign_public_ip: yes
-     region: ap-south-1a
-     instance_tags:
-         Name: myansiblenodes
+     ec2:
+      key_name: key-0e896dff8cee71ce5
+      instance_type: t2.micro
+      image_id: ami-0569650c674be8fe0
+      wait: yes
+      group_id: sg-0c9781ef512ade525
+      count: 2
+      vpc_subnet_id: subnet-0af6be4196ce40e42
+      assign_public_ip: yes
+      region: ap-south-1a
+      instance_tags:
+          Name: myansiblenodes
